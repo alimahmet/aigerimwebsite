@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookstore Catalog</title>
+  <!-- Using Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global resets and typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.7;
+    }
+    /* Header with a gradient background */
+    header {
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    /* Hero section with background image and overlay */
+    .hero {
+      position: relative;
+      background: url('https://media.wnyc.org/i/1860/1395/L/80/2023/01/bookstore.jpg') no-repeat center center/cover;
+      height: 30vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero h2 {
+      position: absolute;
+      color: #fff;
+      font-size: 2.5rem;
+      z-index: 1;
+      margin-bottom: 160px; /* Reduced margin */
+    }
+    /* "Заказать" button in hero */
+    .hero .order-btn {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #e74c3c;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-top: -25px;
+    }
+    .hero .order-btn:hover {
+      background-color: #c0392b;
+    }
+    /* Catalog section styling */
+    .catalog {
+      padding: 40px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .catalog h2 {
+      text-align: center;
+      margin-bottom: 70px;
+      margin-top: -40px;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .book-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .book-card:hover {
+      transform: translateY(-20px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+    .book-card img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .book-info {
+      padding: 20px;
+      text-align: center;
+    }
+    .book-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .book-info p {
+      font-size: 1rem;
+      color: #777;
+    }
+    .book-info .price {
+      font-size: 1.2rem;
+      color: #e74c3c;
+      margin-top: 10px;
+    }
+    /* Footer styling */
+    footer {
+      background: #2980b9;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+    footer p {
+      font-size: 0.9rem;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .catalog h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Bookstore</h1>
+    <p>Discover Your Next Favorite Book</p>
+  </header>
+  
+  <!-- Hero Section with "Наши книги" heading and Order button -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <h2>Наши книги</h2>
+    <a href="booking.html" class="order-btn">Заказать</a>
+  </section>
+  
+  <!-- Catalog Section -->
+  <section class="catalog">
+    <h2>Каталог книг</h2>
+    <div class="book-grid">
+      <!-- Book Card 1 -->
+      <div class="book-card">
+        <img src="https://cdn1.ozone.ru/s3/multimedia-y/6150495334.jpg" alt="1984">
+        <div class="book-info">
+          <h3>1984</h3>
+          <p>Джордж Оруэлл</p>
+          <p class="price">1500₸</p>
+        </div>
+      </div>
+      <!-- Book Card 2 -->
+      <div class="book-card">
+        <img src="https://static10.labirint.ru/books/668307/cover.jpg" alt="Мастер и Маргарита">
+        <div class="book-info">
+          <h3>Мастер и Маргарита</h3>
+          <p>Михаил Булгаков</p>
+          <p class="price">2000₸</p>
+        </div>
+      </div>
+      <!-- Book Card 3 -->
+      <div class="book-card">
+        <img src="https://img.chaconne.ru/img/4169457_1007551.jpg" alt="Великий Гэтсби">
+        <div class="book-info">
+          <h3>Великий Гэтсби</h3>
+          <p>Фрэнсис Скотт</p>
+          <p class="price">2500₸</p>
+        </div>
+      </div>
+      <!-- Book Card 4 -->
+      <div class="book-card">
+        <img src="https://m.media-amazon.com/images/I/81kbb0bRtvL._UF1000,1000_QL80_.jpg" alt="Гарри Поттер">
+        <div class="book-info">
+          <h3>Гарри Поттер</h3>
+          <p>Джоан Кэтлин Роулинг</p>
+          <p class="price">3000₸</p>
+        </div>
+      </div>
+      <!-- Additional book cards can be added here -->
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bookstore. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заказа книг</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #cd8745;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            position: relative;
+        }
+
+        /* Кнопка "На главную" */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .home-button:hover {
+            background-color: #2980b9;
+        }
+
+        .order-form-container {
+            background-color: rgba(232, 171, 127, 0.9);
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #f1f0f0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            padding: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .book-image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .book-image {
+            width: 100px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Уведомление */
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive design for mobile */
+        @media (max-width: 600px) {
+            .order-form-container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            input, select, button {
+                font-size: 14px;
+            }
+
+            .home-button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Кнопка "На главную" -->
+    <a href="mainpage.html" class="home-button">На главную</a>
+
+    <div class="order-form-container">
+        <h1>Заказ КНИГ</h1>
+        <div class="book-image-container">
+            <img src="https://cdn1.ozone.ru/s3/multimedia-y/6150495334.jpg" alt="1984" class="book-image">
+            <img src="https://static10.labirint.ru/books/668307/cover.jpg" alt="Мастер и Маргарита" class="book-image">
+            <img src="https://img.chaconne.ru/img/4169457_1007551.jpg" alt="Мастер и Маргарита" class="book-image">
+            <img src="https://m.media-amazon.com/images/I/81kbb0bRtvL._UF1000,1000_QL80_.jpg" alt="Гарри Поттер" class="book-image">
+        </div>
+
+        <form id="orderForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Введите ваш email">
+
+            <label for="book">Выберите книгу:</label>
+            <select id="book" name="book">
+                <option value="">Выберите книгу</option>
+                <option value="1984">1984 (Джордж Оруэлл)</option>
+                <option value="master">Мастер и Маргарита (Михаил Булгаков)</option>
+                <option value="harry_potter">Гарри Поттер (Дж. К. Роулинг)</option>
+                <option value="great_gatsby">Великий Гэтсби (Ф. Скотт Фицджеральд)</option>
+            </select>
+
+            <label for="quantity">Количество:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="6" required placeholder="От 1 до 6 книг">
+
+            <label for="address">Адрес:</label>
+            <input type="text" id="address" name="address" required placeholder="Введите ваш адрес">
+
+            <button type="submit" id="orderButton">Заказать</button>
+        </form>
+    </div>
+
+    <!-- Уведомление -->
+    <div id="notification" class="notification">
+        Ваш заказ принят, срок ожидания 7 суток.
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Предотвращаем отправку формы
+
+            // Проверка всех полей
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var book = document.getElementById('book').value;
+            var quantity = document.getElementById('quantity').value;
+            var address = document.getElementById('address').value.trim();
+
+            if (name === "" || email === "" || book === "" || quantity === "" || address === "") {
+                alert("Пожалуйста, заполните все поля!");
+                return;
+            }
+
+            // Показать уведомление
+            var notification = document.getElementById('notification');
+            notification.style.display = "block";
+
+            // Автоматически скрыть уведомление через 3 секунды
+            setTimeout(function() {
+                notification.style.display = "none";
+            }, 3000);
+
+            // Очистить форму
+            document.getElementById('orderForm').reset();
+        });
+    </script>
+</body>
+</html>
+
