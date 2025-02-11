@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://images.adsttc.com/media/images/593f/9525/e58e/ce11/8500/0135/large_jpg/28_ä¼‘é—²é˜…è¯»åŒº.jpg.jpg.jpg?1497339168'); 
+    background-image: url("https://images.adsttc.com/media/images/593f/9525/e58e/ce11/8500/0135/medium_jpg/28_休闲阅读区.jpg.jpg.jpg?1497339168"); 
     background-size: cover;
     background-position: center;
 }
@@ -55,7 +55,7 @@ input[type="text"]:focus, input[type="password"]:focus {
     outline: none;
 }
 
-.button {
+button {
     width: 100%;
     padding: 12px;
     background-color: #b18327;
@@ -68,7 +68,7 @@ input[type="text"]:focus, input[type="password"]:focus {
     text-decoration-line: none;
 }
 
-.button:hover {
+button:hover {
     background-color: #b86f15;
 }
 
