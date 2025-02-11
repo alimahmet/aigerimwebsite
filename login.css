@@ -55,7 +55,7 @@ input[type="text"]:focus, input[type="password"]:focus {
     outline: none;
 }
 
-button {
+.button {
     width: 100%;
     padding: 12px;
     background-color: #b18327;
@@ -68,7 +68,7 @@ button {
     text-decoration-line: none;
 }
 
-button:hover {
+.button:hover {
     background-color: #b86f15;
 }
 

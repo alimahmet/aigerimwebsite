@@ -1,6 +1,12 @@
 <?php
 // register.php
-include 'db.php';  // This file should establish a connection and assign it to $conn
+if (!file_exists('database.php')) {
+    die("Ошибка: Файл database.php не найден!");
+}
+include 'database.php';
+echo "Файл database.php успешно подключён!<br>";
+
+include 'database.php';  // This file should establish a connection and assign it to $conn
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
